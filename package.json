@@ -1,0 +1,47 @@
+{
+  "name": "mgc",
+  "version": "1.0.0",
+  "description": "GitHub Copilot Account Manager CLI — manage multiple Copilot accounts, check quotas, and switch between them",
+  "type": "module",
+  "bin": {
+    "mgc": "bin/mgc.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target node --format esm",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test src/index.test.ts",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "github",
+    "copilot",
+    "account",
+    "manager",
+    "cli",
+    "ai"
+  ],
+  "author": "YeonGyu-Kim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caravanglory/my-github-copilot.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^0.11.0",
+    "bun-types": "^1.2.0",
+    "picocolors": "^1.1.1",
+    "typescript": "^5.7.3"
+  }
+}
