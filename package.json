@@ -1,10 +1,10 @@
 {
-  "name": "mgc",
+  "name": "mghc",
   "version": "1.0.0",
   "description": "GitHub Copilot Account Manager CLI — manage multiple Copilot accounts, check quotas, and switch between them",
   "type": "module",
   "bin": {
-    "mgc": "bin/mgc.js"
+    "mghc": "bin/mgc.js"
   },
   "files": [
     "dist",
