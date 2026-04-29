@@ -35,7 +35,7 @@ The tool opens an interactive menu. On startup it automatically refreshes the qu
 ○  Add account (manual)        Paste token directly
 ○  Import from auth.json       Auto-detect from OpenCode
 ○  Check models                Available & disabled models
-○  Refresh identity            Update usernames & orgs
+○  Refresh identity & quota    Update usernames, orgs & quotas
 ○  Switch account
 ○  Remove account
 ○  Remove all accounts
@@ -60,8 +60,8 @@ Reads tokens from `~/.local/share/opencode/auth.json` (or the path you specify) 
 ### Check models
 Queries the Copilot API for each account and shows which models are available and which are disabled by your plan or policy.
 
-### Refresh identity
-Re-fetches the GitHub username, email, and organisation membership for every account and renames entries to match.
+### Refresh identity & quota
+Re-fetches the GitHub username, email, and organisation membership for every account, renames entries to match, and refreshes quota usage.
 
 ### Switch account
 Picks the active account from a list. Switching writes the chosen account's token to `~/.local/share/opencode/auth.json` so that `opencode` (and compatible tools) pick it up immediately.

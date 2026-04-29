@@ -100,9 +100,10 @@ async function handleCheckModels(): Promise<void> {
 
 async function handleRefreshIdentity(): Promise<void> {
   const spinner = p.spinner()
-  spinner.start("Refreshing identity for all accounts...")
+  spinner.start("Refreshing identity & quota for all accounts...")
   await refreshIdentity()
-  spinner.stop("Identity refreshed")
+  await checkQuotas()
+  spinner.stop("Identity & quota refreshed")
 }
 
 async function handleSwitch(): Promise<void> {
@@ -140,7 +141,7 @@ function buildMenuOptions(): Array<{ value: ActionType; label: string; hint?: st
     { value: "add-manual", label: "Add account (manual)", hint: "Paste token directly" },
     { value: "import", label: "Import from auth.json", hint: "Auto-detect from OpenCode" },
     { value: "models", label: "Check models", hint: "Available & disabled models" },
-    { value: "refresh-identity", label: "Refresh identity", hint: "Update usernames & orgs" },
+    { value: "refresh-identity", label: "Refresh identity & quota", hint: "Update usernames, orgs & quotas" },
     { value: "switch", label: "Switch account" },
     { value: "remove", label: "Remove account" },
     { value: "remove-all", label: "Remove all accounts", hint: color.red("destructive") },
